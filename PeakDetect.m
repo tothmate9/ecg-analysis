@@ -170,10 +170,10 @@ function [flag] = CalcPeaksOfCurrentRegion(obj,event_obj)
             lowerBoundary = 1;
         end
         upperBoundary = round(actualPlot(2)/fsCorrection);  
-        if upperBoundary >= numel(ecg)
-            upperBoundary = numel(ecg)-1;
+        if upperBoundary >= numel(ecg_d)
+            upperBoundary = numel(ecg_d)-1;
         end
-        actualPlot = ecg(lowerBoundary:upperBoundary);
+        actualPlot = ecg_d(lowerBoundary:upperBoundary);
         
         [~,peakLocsOfRegion] = findpeaks(actualPlot,'MinPeakHeight',minPeakHeight,'MinPeakDistance',minPeakDist);
         BPMofRegion = CalculateBPM(actualPlot, peakLocsOfRegion);

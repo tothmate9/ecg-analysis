@@ -4,13 +4,13 @@ function [figMain, figDiffLine, figDiffHist, diffLine, locs, BPM, fwhm, outliers
 %       inputPath - A full path to a .mat file.
 %       fs - Frequency, given in Hertz.
 %       minPeakHeight - The minimum peak height to detect a peak.
-%           Optional argument, (default = 0.05).
+%           Optional argument, (default = 0.5).
 %       minPeakDist - The minimum distance between 2 peaks.
 %           Optional argument, (default = 50).
 %
 %   OUTPUTS:
 %       figMain, figDiffLine, figDiffHist - references for the figures.
-%           Function WriteDatasFromFiles() uses them.
+%           Function AnalyzeECG() uses them.
 %       diffLine - The Difference line map, containing the outliers
 %       locs - locations of the peaks
 %       BPM - Beat per Minute
@@ -19,22 +19,24 @@ function [figMain, figDiffLine, figDiffHist, diffLine, locs, BPM, fwhm, outliers
 
 %Example
 %[figMain, figDiffLine, figDiffHist, ecg, diffMap, locs, BPM, fwhm, outliers] = PeakDetect("001.mat",1000);
-%[figMain, figDiffLine, figDiffHist, ecg, diffMap, locs, BPM, fwhm, outliers] = PeakDetect("001.mat",1000,0.05,50);
+%[figMain, figDiffLine, figDiffHist, ecg, diffMap, locs, BPM, fwhm, outliers] = PeakDetect("001.mat",1000,0.5,50);
 
 close all; clc;
-
-fsCorrection = 1000/fs;   % The algorithm is calibrated for 1000 Hz input files. This correction makes it compatible with other samplerates as well.
 
 %Argument check
 if exist(inputPath,'file') ~= 2
     error('File not found! %s',inputPath)
 end
 if nargin < 3 || isempty(minPeakHeight)
-    minPeakHeight = 0.05;
+    minPeakHeight = 0.5;
 end
 if nargin < 4 || isempty(minPeakDist)
-    minPeakDist = 50/fsCorrection;
+    minPeakDist = 50;
 end
+
+% The algorithm is calibrated for 1000 Hz input files. This correction makes it compatible with other samplerates as well.
+fsCorrection = 1000/fs;   
+minPeakDist = minPeakDist/fsCorrection;
 
 ecg = load(inputPath);
 ecg = ecg.data;

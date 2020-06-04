@@ -11,11 +11,11 @@ function [figMain, figDiffLine, figDiffHist, diffLine, locs, BPM, fwhm, outliers
 %   OUTPUTS:
 %       figMain, figDiffLine, figDiffHist - references for the figures.
 %           Function AnalyzeECG() uses them.
-%       diffLine - The Difference line map, containing the outliers
+%       diffLine - The difference line diagram,, containing the outliers
 %       locs - locations of the peaks
 %       BPM - Beat per Minute
 %       FWHM - Full-Width at Half-Maximum
-%       outliers - the number of found outliers.
+%       outliers - the number of outliers found.
 
 %Example
 %[figMain, figDiffLine, figDiffHist, ecg, diffMap, locs, BPM, fwhm, outliers] = PeakDetect("001.mat",1000);
@@ -155,7 +155,7 @@ ylabel('RR intervals (ms)')
 xlabel('RR intervals over time')
 
 %% Diff map histogram
-[figDiffHist, fwhm] = plotHist(diffLine*fsCorrection, meanRRinterval);
+[figDiffHist, fwhm] = PlotHist(diffLine*fsCorrection, meanRRinterval);
 
 %%
 function [flag] = CalcPeaksOfCurrentRegion(obj,event_obj)

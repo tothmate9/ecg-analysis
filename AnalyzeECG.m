@@ -1,19 +1,10 @@
 function AnalyzeECG(folderName, fs, movavgth, minPeakHeight, minPeakDist)
-% AnalyzeECG Applying R-peak detection on multiple files, and print
-% the plots to PDFs and information about the analysis to a text file.
+% Applies R-peak detection on multiple files, prints the plots to PDFs,
+% and information about the analysis to a text file.
 
-%   INPUTS:
-%       folderName - A full path to the folder containing the .mat files.
-%       fs - Frequency, given in Hertz.
-%       movavgth - Ectopic beats will be classified as peaks differing more
-%   than movavgth% from the moving average of the RR interval. Set it to
-%   0.3, for a 30% threshold.
-%
-%   Example: AnalyzeECG('C:\Documents\UZGent\WorkDir\',0.30);
-%
 %   Collects the .mat files from the specified folder, applies
 %   peakdetection, then prints ectopic beats to separate pdf
-%   files, and the difference histogram and line.
+%   files, and the difference histogram and line diagram.
 %   Prints information about the analysis to a text file:
 %   -BPM
 %   -Number of R peaks
@@ -21,6 +12,18 @@ function AnalyzeECG(folderName, fs, movavgth, minPeakHeight, minPeakDist)
 %   -Full-Width at Half-Maximum
 %   -Number of outliers
 %   -The input arguments of the analysis
+%
+%   INPUTS:
+%       folderName - A full path to the folder containing the .mat files.
+%       fs - Frequency, given in Hertz.
+%       movavgth - Ectopic beats will be classified as peaks differing more
+%   than movavgth% from the moving average of the RR interval. Set it to
+%   0.3, for a 30% threshold.
+%
+%   Example: AnalyzeECG('C:\FolderWithFiles', 1000, 0.3, 0.5, 50);
+%            AnalyzeECG('C:\FolderWithFiles', 1000);
+
+
 
 %Argument check
 if nargin < 3 || isempty(movavgth)

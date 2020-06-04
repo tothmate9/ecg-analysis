@@ -16,7 +16,7 @@ samplerate = 2000;
  nyquist = samplerate/2;
  filterorder = 2;
  highpassfreq = 5; % cutoff frequency in Hz
- highpass = highpassfreq/nyquist; % frequencies higher than 2 Hz are let through  <-- isn't it 5 Hz?
+ highpass = highpassfreq/nyquist; % frequencies higher than 5 Hz are let through.
  [b,a] = butter(filterorder, highpass, 'high');
  
 for i = 3:numberfiles;

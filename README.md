@@ -6,7 +6,7 @@
 
 > Steijns F, Tóth MI, Demolder A, Larsen LE, Renard M, Desloovere J, Raedt R, Segers P, De Backer J and Sips P. “Ambulatory electrocardiographic monitoring and ectopic beat detection in conscious mice.” Submitted to Sensors.
 
-## Table of Contents (Optional)
+## Table of Contents
 
 - [Installation](#installation)
 - [Features](#features)

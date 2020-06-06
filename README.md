@@ -1,4 +1,4 @@
-<a href="https://www.uzgent.be/"><img src="https://www.uzgent.be/nl/Style%20Library/UZ%20Gent%20Styles/Images/logo-uzgent.svg" title="UZGent" alt="UZGent" width="200"></a>
+<a href="https://www.ugent.be/"><img src="https://styleguide.ugent.be/files/uploads/logo_UGent_NL_RGB_2400_kleur_witbg.png" title="UGent" alt="UGent" width="200"></a>
 
 # ECG analysis
 

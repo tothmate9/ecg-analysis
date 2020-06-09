@@ -13,6 +13,8 @@
 - [Usage](#usage)
 - [License](#license)
 
+![Recordit GIF](http://g.recordit.co/deabrSiNBc.gif)
+
 ## Installation:
 The code was written and tested in MATLAB R2019b.
 Running the scripts only requires the installment of Signal Processing Toolbox.
@@ -27,7 +29,7 @@ The main function for R-peak detection, displaying the found peaks and diagrams 
 
 - **INPUTS:**
     - inputPath - A full path to a .mat file.
-    - fs - Frequency, given in Hertz.
+    - fs - Frequency, given in Hertz. Mandatory input argument.
     - minPeakHeight - The minimum peak height to detect a peak.
            Optional argument, (default = 0.5).
     - minPeakDist - The minimum distance between 2 peaks.
@@ -64,7 +66,7 @@ files (ROIs), and the difference histogram and line diagram.
 
 - **INPUTS:**
     - folderName - A full path to the folder containing the .mat files.
-    - fs - Frequency, given in Hertz.
+    - fs - Frequency, given in Hertz. Mandatory input argument.
     - movavgth - Ectopic beats will be classified as peaks differing more than movavgth from the moving average of the RR interval. Set it to 0.3, for a 30% threshold. Optional argument.
     - minPeakHeight - The minimum peak height to detect a peak.
            Optional argument, (default = 0.5).
@@ -128,6 +130,28 @@ The main function for R-peak detection, displaying the found peaks and diagrams 
 
 
 ## Examples
+
+Performing R-peak detection on an input file with 1000Hz frequency, which is placed in the following directory:
+```
+'C:\Users\Files\001.mat'
+```
+The following command can be used:
+```
+PeakDetect("C:\Users\Files\001.mat",1000);
+```
+Example command for the same file, providing minPeakHeight = 0.5, minPeakDist = 50 (default values):
+```
+PeakDetect("C:\Users\Files\001.mat",1000,0.5,50);
+```
+
+For a complete analysis of multiple segments, the following example commands can be used:
+
+```
+AnalyzeECG('C:\FolderWithFiles', 1000);
+AnalyzeECG('C:\FolderWithFiles', 1000, 0.3, 0.5, 50);
+```
+In this case, the result of the analysis will be saved in the provided directory, including the eptopic beat detection.
+
 
 ## License
 ----

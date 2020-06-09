@@ -2,7 +2,7 @@ function [figMain, figDiffLine, figDiffHist, diffLine, locs, BPM, fwhm, outliers
 %PeakDetect R-peak detection, with plots
 %   INPUTS:
 %       inputPath - A full path to a .mat file.
-%       fs - Frequency, given in Hertz.
+%       fs - Frequency, given in Hertz. Mandatory input argument.
 %       minPeakHeight - The minimum peak height to detect a peak.
 %           Optional argument, (default = 0.5).
 %       minPeakDist - The minimum distance between 2 peaks.
@@ -26,6 +26,9 @@ close all; clc;
 %Argument check
 if exist(inputPath,'file') ~= 2
     error('File not found! %s',inputPath)
+end
+if nargin < 2 || isempty(fs)
+    error('Input argument fs is required.')
 end
 if nargin < 3 || isempty(minPeakHeight)
     minPeakHeight = 0.5;

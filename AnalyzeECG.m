@@ -15,7 +15,7 @@ function AnalyzeECG(folderName, fs, movavgth, minPeakHeight, minPeakDist)
 %
 %   INPUTS:
 %       folderName - A full path to the folder containing the .mat files.
-%       fs - Frequency, given in Hertz.
+%       fs - Frequency, given in Hertz. Mandatory input argument.
 %       movavgth - Ectopic beats will be classified as peaks differing more
 %   than movavgth% from the moving average of the RR interval. Set it to
 %   0.3, for a 30% threshold.
@@ -25,7 +25,10 @@ function AnalyzeECG(folderName, fs, movavgth, minPeakHeight, minPeakDist)
 
 
 
-%Argument check
+%% Argument check
+if nargin < 2 || isempty(fs)
+    error('Input argument fs is required.')
+end
 if nargin < 3 || isempty(movavgth)
     movavgth = 0.3;
 end
@@ -40,6 +43,7 @@ if 7 ~= exist(folderName,'dir')
     error('Cannot locate the folder: %s',folderName)
 end
 
+%% Processing files
 files = dir(strcat(folderName,'\*.mat'));
 numOfFiles = numel(files);
 

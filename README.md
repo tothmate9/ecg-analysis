@@ -21,7 +21,7 @@ The code was written and tested in MATLAB R2019b.
 Running the scripts only requires the installment of Signal Processing Toolbox.
 
 ## Features
-The developed scripts are capable of the analysis of murine electrocardiograms, with the feature extraction of different ECG-parameters, including average HR, mean RR-interval and HRV. The code also provides functionality for ectopic beat detection.
+The developed scripts are capable of analyzing murine electrocardiograms, with the feature extraction of different ECG-parameters, including average HR, mean RR-interval and HRV. The code also provides functionality for ectopic beat detection.
 
 ## Usage
 

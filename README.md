@@ -11,6 +11,7 @@
 - [Installation](#installation)
 - [Features](#features)
 - [Usage](#usage)
+- [Examples](#examples)
 - [License](#license)
 
 ![Recordit GIF](http://g.recordit.co/deabrSiNBc.gif)

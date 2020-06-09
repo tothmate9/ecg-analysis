@@ -14,7 +14,7 @@
 - [Examples](#examples)
 - [License](#license)
 
-![Recordit GIF](http://g.recordit.co/deabrSiNBc.gif)
+![Recordit GIF](http://g.recordit.co/EwDQXhBFie.gif)
 
 ## Installation:
 The code was written and tested in MATLAB R2019b.

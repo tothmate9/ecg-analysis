@@ -4,7 +4,7 @@
 
 > This page describes the codebehind of the MATLAB scripts used in our research of:
 
-> Steijns F, Tóth MI, Demolder A, Larsen LE, Renard M, Desloovere J, Raedt R, Segers P, De Backer J and Sips P. “Ambulatory electrocardiographic monitoring and ectopic beat detection in conscious mice.” Submitted to Sensors.
+> Steijns, F.; Tóth, M.I.; Demolder, A.; Larsen, L.E.; Desloovere, J.; Renard, M.; Raedt, R.; Segers, P.; De Backer, J.; Sips, P. Ambulatory Electrocardiographic Monitoring and Ectopic Beat Detection in Conscious Mice. Sensors 2020, 20, 3867.
 
 ## Table of Contents
 
@@ -172,6 +172,6 @@ Authors: Máté István Tóth, Lars Larsen, Robrecht Raedt, Felke Steijns, Patri
    See the License for the specific language governing permissions and
    limitations under the License.
 
-When using this code please refer to: Steijns F, Tóth MI, Demolder A, Larsen LE, Renard M, Desloovere J, Raedt R, Segers P, De Backer J and Sips P. “Ambulatory electrocardiographic monitoring and ectopic beat detection in conscious mice.” Submitted to Sensors.
+When using this code please refer to: Steijns, F.; Tóth, M.I.; Demolder, A.; Larsen, L.E.; Desloovere, J.; Renard, M.; Raedt, R.; Segers, P.; De Backer, J.; Sips, P. Ambulatory Electrocardiographic Monitoring and Ectopic Beat Detection in Conscious Mice. Sensors 2020, 20, 3867.
 
 ----
